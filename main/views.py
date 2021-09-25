@@ -45,3 +45,6 @@ def result(request):
     }
         
     return render(request, 'result.html', context)
+
+def loading(request):
+    return render(request, 'loading_page.html')

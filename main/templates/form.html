@@ -1,23 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
+<style>
+ 
+    .question_box {
+        width: 390px;
+        height: 844px;
+    }
+
+    .question_form {
+        width : 100%;
+        height : 100%;
+    }
+
+    .question_title {
+        color : #67917D;
+        width: 100%;
+    }
+
+    .question {
+        width : 274px;
+        height: 106px;
+        color : #67917D;
+        border : 3px solid #000000;
+        background-color: #EDEDDD;
+        border-radius: 30px;
+    }
+
+    .next_question {
+        bottom : 50px;
+        background-color: #EDEDDD;
+        border : 0;
+        border-radius: 10%;
+        
+    }
+
+    .question_number {
+        color : #67917D;
+        text-align: center;
+        font-size : 25px;
+        
+
+    }
+    
+</style>
+
 <body>
-    <form action="/result/" method='post'>
-        {% csrf_token %}
-        {% for question in questions %}
-            <h3>{{question.number}}. {{question.content}}</h3>
+    <div class="question_box">
+     
+
+        <form action="/result/" method='post' class = "question_form">
+            {% csrf_token %}
+            {% for question in questions %}
+
+            <p class = "question_number">{{question.number}}번 </p>
+
+            <h3 class = "question_title"> {{question.content}}</h3>
+
             {% for choice in question.choice_set.all %}
-                <div>
-                    <input type="radio" name="question-{{ question.pk }}" id="choice-{{ choice.pk }}" value="{{ choice.embti.pk }}">
-                    <label for="choice-{{ choice.pk }}">{{ forloop.counter }}. {{choice.content}}</label>                    
-                </div>
+
+            <div class = "question">
+                <input type="radio" name="question-{{ question.pk }}" id="choice-{{ choice.pk }}"
+                    value="{{ choice.embti.pk }}">
+                <label for="choice-{{ choice.pk }}">{{ forloop.counter }}. {{choice.content}}</label>
+            </div>
             {% endfor %}
-        <hr>
-        {% endfor %}    
-        <input type="submit" value="제출하기">
-    </form>
+          
+            {% endfor %}
+            <input type="submit" value="다음 질문" class = "next_question">
+        </form>
+   
+    </div>
 </body>
+
 </html>
