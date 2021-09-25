@@ -5,15 +5,13 @@ from .models import Question, Embti, Choice, Result
 
 # Create your views here.
 
+count = 0
 def index(request):
-    embtis = Embti.objects.all()
+    global count # 바깥영역의 변수를 사용할 때 global
+    count = count + 1 # 접속할 때마다 방문자 1 증가
     
-    context = {
-        'embtis' : embtis,
-    }
+    return render(request, 'index.html', {'cnt': count})
     
-    return render(request, 'index.html', context=context)
-
 def form(request):
     questions = Question.objects.all()
     
