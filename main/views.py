@@ -19,7 +19,7 @@ def form(request):
         'questions' : questions,
     }
     
-    return render(request, 'question1.html', context=context)
+    return render(request, 'form.html', context=context)
 
 def result(request):
     # 문항 수
