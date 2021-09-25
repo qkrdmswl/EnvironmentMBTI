@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<style>
+    .loading_box {
+        width: 390px;
+        height: 844px;
+        text-align: center;
+    }
+
+    #earth {
+        width: 100%;
+
+    }
+
+    #loading_title {
+        margin-top: 178px;
+        font-size: 30px;
+        text-align: center;
+        color: #67917D;
+        position:relative;
+    }
+
+
+    .rotate {
+        width: 100%;
+        height: 80%;
+        background-color: #ffffff;
+        color: #67917D;
+        text-align: center;
+    }
+
+    .circle {
+        left : 50%;
+        top: 25%;
+        width: 70px;
+        height: 70px;
+        border: 10px solid rgba(12, 12, 12, 0.3);
+        border-radius: 50%;
+        border-top-color: #67917D;
+        transform: translate(-50%, -50%) rotate(0deg);
+        animation: spin 1s infinite;
+        position: relative;
+      
+    }
+
+    @keyframes spin {
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+</style>
+
+
+<body>
+    {% load static %}
+
+    <div class="loading_box">
+        <div style="width: 100%; height: 100%;">
+
+            <p id="loading_title"> 당신이 어느정도 <br>환장 했는지<br> 측정 중 입니다.</p>
+            <img src="{% static 'img/loading_earth.png' %}" id="earth">
+
+
+            <div class="rotate">
+                <div class="circle">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

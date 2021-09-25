@@ -47,5 +47,9 @@ def result(request):
     #     'embti' : best_embti,
     #     'counter' : counter
     # }
-        
+    
     return render(request, 'result.html')
+
+def loading(request):
+    return render(request, 'loading_page.html')
+
