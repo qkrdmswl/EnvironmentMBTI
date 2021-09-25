@@ -67,12 +67,12 @@
             <div class = "question">
                 <input type="radio" name="question-{{ question.pk }}" id="choice-{{ choice.pk }}"
                     value="{{ choice.embti.pk }}">
-                <label for="choice-{{ choice.pk }}">{{ forloop.counter }}. {{choice.content}}</label>
+                <label for="choice-{{ choice.pk }}">{{choice.content}}</label>
             </div>
             {% endfor %}
           
             {% endfor %}
-            <input type="submit" value="다음 질문" class = "next_question">
+            <input type="submit" value="다음 질문" class ="next_question">
         </form>
    
     </div>
