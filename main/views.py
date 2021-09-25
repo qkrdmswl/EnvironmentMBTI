@@ -11,7 +11,7 @@ def index(request):
     count = count + 1 # 접속할 때마다 방문자 1 증가
     
     return render(request, 'index.html', {'cnt': count})
-    
+
 def form(request):
     questions = Question.objects.all()
     
@@ -19,7 +19,7 @@ def form(request):
         'questions' : questions,
     }
     
-    return render(request, 'form.html', context=context)
+    return render(request, 'form2.html', context=context)
 
 
 def result(request):
