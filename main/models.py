@@ -15,12 +15,11 @@ class Question(models.Model):
     def __str__(self):
         return f'{self.number}. {self.content}'
     
+    
 class Choice(models.Model):
     content = models.CharField(max_length=100)
     question = models.ForeignKey(to='main.Question', on_delete=models.CASCADE)
-    embti = models.ForeignKey(to='main.Embti',
-                                 on_delete=models.CASCADE,
-                                 null=True)
+    point = models.IntegerField(default=0)
     
     def __str__(self):
         return self.content

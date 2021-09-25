@@ -27,21 +27,25 @@ def result(request):
     # embti 유형 수
     K = Embti.objects.count()
     
-    counter = [0] * (K+1)
+    # counter = [0] * (K+1)
     
-    for n in range(1,N+1):
-        embti_id = int(request.POST[f'question-{n}'][0])
-        counter[embti_id] += 1
+    print(f'문항 수: {N}, embti 유형 수: {K}')
+    
+    print(f'POST : {request.POST}')
+    
+    # for n in range(1,N+1):
+    #     embti_id = int(request.POST[f'question-{n}'][0])
+    #     counter[embti_id] += 1
         
-        # 최고점 유형
-    best_embti_id = max(range(1, K+1), key=lambda id : counter[id])
-    best_embti = Embti.objects.get(pk=best_embti_id)
-    best_embti.count += 1
-    best_embti.save()
+    #     # 최고점 유형
+    # best_embti_id = max(range(1, K+1), key=lambda id : counter[id])
+    # best_embti = Embti.objects.get(pk=best_embti_id)
+    # best_embti.count += 1
+    # best_embti.save()
         
-    context = {
-        'embti' : best_embti,
-        'counter' : counter
-    }
+    # context = {
+    #     'embti' : best_embti,
+    #     'counter' : counter
+    # }
         
-    return render(request, 'result.html', context)
+    return render(request, 'result.html')
