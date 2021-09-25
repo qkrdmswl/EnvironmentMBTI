@@ -1,0 +1,182 @@
+@font-face {
+    src: url("font/GMedium.ttf");
+    font-family: "GM";
+}
+@font-face {
+    src: url("font/GBold.ttf");
+    font-family: "GB";
+}
+@font-face {
+    src: url("font/SCD5.otf");
+    font-family: "SCD5";
+}
+@font-face {
+    src: url("font/DXH.ttf");
+    font-family: "SKY";
+}
+@font-face {
+    src: url("font/INK.ttf");
+    font-family: "INK";
+}
+
+body {
+    margin: 0;
+}
+.big_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-top: 10%;
+    align-items: center;
+}
+.box > :nth-child(1),
+.box > :nth-child(2),
+.box > :nth-child(3),
+.box > :nth-child(4) {
+    width: 100%;
+}
+.main_box {
+    display: flex;
+    flex-direction: column;
+    border: solid 6px;
+    border-color: #67917d;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    color: #67917d;
+    height: 400px;
+    box-shadow: 15px 15px 15px -15px gray;
+}
+.main_box > :nth-child(1) {
+    font-size: 20px;
+    font-family: "GB";
+}
+.main_box > :nth-child(2) {
+    font-size: 35px;
+    font-family: "GB";
+}
+.main_box > :nth-child(4) {
+    margin-bottom: 20px;
+    font-family: "INK";
+    font-size: 20px;
+    font-weight: bold;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "GM";
+}
+.per {
+    margin-top: 20px;
+    display: flex;
+    border: solid 6px;
+    border-color: #67917d;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    color: #67917d;
+    height: 50px;
+    box-shadow: 15px 15px 15px -15px gray;
+}
+.per > :nth-child(1) {
+    font-size: 30px;
+    margin-right: 5px;
+    font-family: "GB";
+    margin-top: 5px;
+}
+.per > :nth-child(3) {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-family: "GB";
+}
+.next {
+    margin-top: 20px;
+    display: flex;
+    border: solid 6px;
+    border-color: #67917d;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 130px;
+    box-shadow: 15px 15px 15px -15px gray;
+}
+.next > :nth-child(1) {
+    font-size: 22px;
+    color: #67917d;
+    font-family: "GB";
+    margin-top: 10px;
+}
+.level {
+    display: flex;
+    width: 330px;
+    justify-content: space-around;
+}
+.name_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #4e6057;
+}
+.name {
+    display: flex;
+    font-size: 12px;
+    font-family: "GM";
+}
+.mable > img {
+    width: 120px;
+    height: 120px;
+}
+.call {
+    margin-top: 5px;
+    font-size: 30px;
+    font-family: "GB";
+}
+.you {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #67917d;
+    border-radius: 30px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 15px 15px 15px -15px gray;
+}
+.you > :nth-child(1) {
+    font-size: 20px;
+    font-family: "GB";
+}
+.you > :nth-child(2) {
+    font-family: "GM";
+}
+.end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #67917d;
+    font-size: 20px;
+}
+a:link {
+    color: white;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+}

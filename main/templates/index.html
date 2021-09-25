@@ -1,12 +1,140 @@
-<h1>
-    hello world
-</h1>
-<p>
-    hello
-</p>
+{% load static %}
+<!DOCTYPE html>
 
-{% for e in embtis %}
-<p>
-    {{e.name}} : {{e.count}}
-</p>
-{% endfor %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'index/css' %}" />
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .name {
+            margin-top: 30%;
+            color: #67917d;
+            font-size: 50px;
+            font-family: "SKY";
+        }
+
+        .definition {
+            margin-bottom: 30px;
+            color: #67917d;
+            font-family: "SCD5";
+            font-size: 18px;
+        }
+
+        .definition> :nth-child(1) {
+            font-family: "GB";
+        }
+
+        .definition> :nth-child(2) {
+            font-family: "GM";
+        }
+
+        .button {
+            color: #67917d;
+            height: 60px;
+            width: 250px;
+            border: solid 4px;
+            border-radius: 40px;
+            border-color: #67917d;
+            font-family: "GB";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            box-shadow: 15px 15px 15px -15px gray;
+        }
+
+        .now {
+            background-color: #67917d;
+            border-radius: 5px;
+            height: 80px;
+            width: 200px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-top: 30px;
+            font-family: "GM";
+        }
+
+        .logo {
+            bottom: 0;
+        }
+
+        a:link {
+            color: #67917d;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #67917d;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #67917d;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="name"><img src="{% static 'img/main.png' %}" /></div>
+        <div>
+            <img src="{% static 'img/trash.png' %}" />
+        </div>
+        <div class="definition">
+            <div>환 장 하 다</div>
+            <div>[동사] 1. 환 경 장 인 이 되 다</div>
+        </div>
+        <a href="{% url 'form' %}">
+            <div class="button">
+                <div><span>환장하러 가기</span></div>
+            </div>
+        </a>
+
+        <div class="now">
+            <div><span>지금까지</span></div>
+            <div><span>12312 명이</span></div>
+            <div><span>환장했습니다.</span></div>
+        </div>
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" />
+        </div>
+    </div>
+
+    <h1>
+        hello world
+    </h1>
+    <p>
+        hello
+    </p>
+
+    {% for e in embtis %}
+    <p>
+        {{e.name}} : {{e.count}}
+    </p>
+    {% endfor %}
+</body>
+
+</html>

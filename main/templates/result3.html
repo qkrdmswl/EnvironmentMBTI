@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,3 +14,75 @@
     <a href="/form">다시하기</a>
 </body>
 </html>
+=======
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'result.css' %}" />
+    </head>
+    <body>
+        <div class="big_box">
+            <div class="box">
+                <div class="main_box">
+                    <div>불휘 기픈 남ᄀᆞᆫ</div>
+                    <div>나무님</div>
+                    <div><img src="{% static 'img/tree.png' %}" /></div>
+                    <div>환장 start~</div>
+                    <div class="text">
+                        <div>기초튼튼 환경지식이 뿌리를 깊게 내려</div>
+                        <div>나무가 되었습니다!</div>
+                        <div>하지만 이제 시작이에요...</div>
+                        <div>나무가 숲이 되어 더 커지려면</div>
+                        <div>환경에 대한 관심이 더욱 필요하겠죠?</div>
+                    </div>
+                </div>
+                <div class="per">
+                    <div>00</div>
+                    <div>% 의 사람이 같은</div>
+                    <div>나무님</div>
+                    <div>이에요</div>
+                </div>
+                <div class="next">
+                    <div>지금보다 더 환장하면</div>
+                    <div class="level">
+                        <div><img src="{% static 'img/littleforest.png' %}" /></div>
+                        <div class="name_box">
+                            <div class="name">숲을 보는 당신!</div>
+                            <div class="call">숲군</div>
+                        </div>
+                    </div>
+                </div>
+                <span class="button gray medium"
+                    ><a href="#" onclick="clip(); return false;"
+                        ><div class="you">
+                            <div>너도 환장했니?</div>
+                            <div>친구에게 공유하기 (URL 복사)</div>
+                        </div></a
+                    ></span
+                >
+
+                <div class="logo">
+                    <img src="{% static 'img/logo.png' %}" />
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function clip() {
+                var url = "";
+                var textarea = document.createElement("textarea");
+                document.body.appendChild(textarea);
+                url = window.document.location.href;
+                textarea.value = url;
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+            }
+        </script>
+    </body>
+</html>
+>>>>>>> 4ed25669e07865722df2028df42c3a4357d370f9
