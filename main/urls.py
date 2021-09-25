@@ -5,8 +5,9 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('form/', views.form),
-    path('result/', views.result),
-    path('loading/', views.loading)
+    path('form/', views.form, name ="form"),
+    path('result/', views.result, name ="result"),
+    path('loading/', views.loading),
+    path('result1/', views.result1),
     
 ]

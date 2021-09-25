@@ -53,3 +53,5 @@ def result(request):
 def loading(request):
     return render(request, 'loading_page.html')
 
+def result1(request):
+    return render(request, 'result1.html')
