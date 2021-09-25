@@ -1,12 +1,52 @@
-<h1>
-    hello world
-</h1>
-<p>
-    hello
-</p>
+{% load static %}
+<!DOCTYPE html>
 
-{% for e in embtis %}
-<p>
-    {{e.name}} : {{e.count}}
-</p>
-{% endfor %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'index/css' %}"/>
+    </head>
+    <body>
+        
+        <div class="box">
+            <div class="name"><img src="{% static 'img/main.png' %}"/></div>
+            <div>
+                <img src="{% static 'img/trash.png' %}" />
+            </div>
+            <div class="definition">
+                <div>환 장 하 다</div>
+                <div>[동사] 1. 환 경 장 인 이 되 다</div>
+            </div>
+            <a href="#"
+                ><div class="button">
+                    <div><span>환장하러 가기</span></div>
+                </div></a
+            >
+
+            <div class="now">
+                <div><span>지금까지</span></div>
+                <div><span>12312 명이</span></div>
+                <div><span>환장했습니다.</span></div>
+            </div>
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" />
+            </div>
+        </div>
+
+        <h1>
+            hello world
+        </h1>
+        <p>
+            hello
+        </p>
+        
+        {% for e in embtis %}
+        <p>
+            {{e.name}} : {{e.count}}
+        </p>
+        {% endfor %}
+    </body>
+</html>

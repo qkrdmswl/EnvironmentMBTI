@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="result.css" />
+    </head>
+    <body>
+        <div class="big_box">
+            <div class="box">
+                <div class="main_box">
+                    <div>숲을 보는 당신!</div>
+                    <div>숲군</div>
+                    <div><img src="image/숲.png" /></div>
+                    <div>점점 환장하고 있군</div>
+                    <div class="text">
+                        <div>나무가 모여 수풀이라고 하렸다...</div>
+                        <div>당신은 화창한 숲속의 햇살을 맞으며,</div>
+                        <div>피톤치드 내-음을 맡을 자격이 충분하다.</div>
+                        <div>하지만 진정한 환장을 위해서는</div>
+                        <div>조금만 더 환장해보는 건 어떨까?</div>
+                    </div>
+                </div>
+                <div class="per">
+                    <div>00</div>
+                    <div>% 의 사람이 같은</div>
+                    <div>숲군</div>
+                    <div>이에요</div>
+                </div>
+                <div class="next">
+                    <div>지금보다 더 환장하면</div>
+                    <div class="level">
+                        <div><img src="image/작은산.png" /></div>
+                        <div class="name_box">
+                            <div class="name">우리 강산 푸르게 푸르게~</div>
+                            <div class="call">산양</div>
+                        </div>
+                    </div>
+                </div>
+                <span class="button gray medium"
+                    ><a href="#" onclick="clip(); return false;"
+                        ><div class="you">
+                            <div>너도 환장했니?</div>
+                            <div>친구에게 공유하기 (URL 복사)</div>
+                        </div></a
+                    ></span
+                >
+
+                <div class="logo">
+                    <img src="image/logo.png" />
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function clip() {
+                var url = "";
+                var textarea = document.createElement("textarea");
+                document.body.appendChild(textarea);
+                url = window.document.location.href;
+                textarea.value = url;
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+            }
+        </script>
+    </body>
+</html>
