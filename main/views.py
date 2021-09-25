@@ -29,8 +29,9 @@ def result(request):
     
     sum = 0
     for i in range(10):
-        j = i+1
-        sum += request.POST[0]['question-'+j]
+        j = str(i+1)
+        sum += int(request.POST['question-'+j])
+        
         
     if sum == 10:
         return render(request, 'result5.html')
