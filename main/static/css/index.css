@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    margin-top: 30%;
+    color: #67917d;
+    font-size: 50px;
+    font-family: "SKY";
+}
+
+.definition {
+    margin-bottom: 30px;
+    color: #67917d;
+    font-family: "SCD5";
+    font-size: 18px;
+}
+
+.definition> :nth-child(1) {
+    font-family: "GB";
+}
+
+.definition> :nth-child(2) {
+    font-family: "GM";
+}
+
+.button {
+    color: #67917d;
+    height: 60px;
+    width: 250px;
+    border: solid 4px;
+    border-radius: 40px;
+    border-color: #67917d;
+    font-family: "GB";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    box-shadow: 15px 15px 15px -15px gray;
+}
+
+.now {
+    background-color: #67917d;
+    border-radius: 5px;
+    height: 80px;
+    width: 200px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 30px;
+    font-family: "GM";
+}
+
+.logo {
+    bottom: 0;
+}
+
+a:link {
+    color: #67917d;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #67917d;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #67917d;
+    text-decoration: none;
+}
