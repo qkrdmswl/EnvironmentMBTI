@@ -23,3 +23,7 @@ class Choice(models.Model):
     
     def __str__(self):
         return self.content
+
+class Result(models.Model):
+    result = models.IntegerField(default=0)
+    

@@ -6,7 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('form/', views.form),
-    path('result/', views.result),
+    path('result/', views.result, name='result'),
     path('loading/', views.loading)
-    
 ]

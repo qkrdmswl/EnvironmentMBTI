@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import Question, Embti, Choice
+from django.http import HttpResponse, HttpResponse
+from django.urls import reverse
+from .models import Question, Embti, Choice, Result
 
 # Create your views here.
 
@@ -19,36 +21,31 @@ def form(request):
         'questions' : questions,
     }
     
-    return render(request, 'question1.html', context=context)
+    return render(request, 'form.html', context=context)
+
 
 def result(request):
-    # 문항 수
-    N = Question.objects.count()
-    # embti 유형 수
-    K = Embti.objects.count()
-    
-    # counter = [0] * (K+1)
-    
-    print(f'문항 수: {N}, embti 유형 수: {K}')
-    
     print(f'POST : {request.POST}')
     
-    # for n in range(1,N+1):
-    #     embti_id = int(request.POST[f'question-{n}'][0])
-    #     counter[embti_id] += 1
+    sum = 0
+    for i in range(10):
+        j = i+1
+        sum += request.POST[0]['question-'+j]
         
-    #     # 최고점 유형
-    # best_embti_id = max(range(1, K+1), key=lambda id : counter[id])
-    # best_embti = Embti.objects.get(pk=best_embti_id)
-    # best_embti.count += 1
-    # best_embti.save()
-        
-    # context = {
-    #     'embti' : best_embti,
-    #     'counter' : counter
-    # }
+    if sum == 10:
+        return render(request, 'result.html')
+    elif 8 <= sum and sum >= 9:
+        return render(request, 'result1.html')
+    elif 5 <= sum and sum >= 7:
+        return render(request, 'result2.html')
+    elif 3 <= sum and sum >= 4:
+        return render(request, 'result3.html')
+    else:
+        return render(request, 'result4.html')
     
-    return render(request, 'result.html')
+    # if request.method == 'POST':
+    #     post = Result()
+
 
 def loading(request):
     return render(request, 'loading_page.html')

@@ -54,7 +54,7 @@
     <div class="question_box">
      
 
-        <form action="/result/" method='post' class = "question_form">
+        <form action="{% url 'result' %}" method='post' class = "question_form">
             {% csrf_token %}
             {% for question in questions %}
 
@@ -65,8 +65,8 @@
             {% for choice in question.choice_set.all %}
 
             <div class = "question">
-                <input type="radio" name="question-{{ question.pk }}" id="choice-{{ choice.pk }}"
-                    value="{{ choice.embti.pk }}">
+                <input type="radio" name="question-{{ question.number }}" id="choice-{{ choice.pk }}"
+                    value="{{ choice.point }}">
                 <label for="choice-{{ choice.pk }}">{{choice.content}}</label>
             </div>
             {% endfor %}
