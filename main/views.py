@@ -33,15 +33,15 @@ def result(request):
         sum += request.POST[0]['question-'+j]
         
     if sum == 10:
-        return render(request, 'result.html')
-    elif 8 <= sum and sum >= 9:
-        return render(request, 'result1.html')
-    elif 5 <= sum and sum >= 7:
-        return render(request, 'result2.html')
-    elif 3 <= sum and sum >= 4:
-        return render(request, 'result3.html')
-    else:
+        return render(request, 'result5.html')
+    elif 8 <= sum and sum <= 9:
         return render(request, 'result4.html')
+    elif 6 <= sum and sum <= 7:
+        return render(request, 'result3.html')
+    elif 3 <= sum and sum <= 5:
+        return render(request, 'result2.html')
+    else:
+        return render(request, 'result1.html')
     
     # if request.method == 'POST':
     #     post = Result()
@@ -49,6 +49,3 @@ def result(request):
 
 def loading(request):
     return render(request, 'loading_page.html')
-
-def result1(request):
-    return render(request, 'result1.html')
