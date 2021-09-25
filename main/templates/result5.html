@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="result.css" />
+        <link rel="stylesheet" href="{% static 'css/result.css' %}" />
     </head>
     <body>
         <div class="big_box">
@@ -14,7 +14,7 @@
                 <div class="main_box">
                     <div>우리 강산 푸르게 푸르게~</div>
                     <div>산양</div>
-                    <div><img src="image/산.png" /></div>
+                    <div><img src="{% static 'img/mountain.png' %}" /></div>
                     <div>제대로 환장했군</div>
                     <div class="text">
                         <div>누구보다 앞장서서 환경을 지키는</div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="next">
                     <div class="level">
-                        <div class="mable"><img src="image/지구.png" /></div>
+                        <div class="mable"><img src="{% static 'img/earth.png' %}" /></div>
                         <div class="name_box">
                             <div class="end">
                                 <div>지금보다 더 환장하면...</div>
@@ -52,7 +52,7 @@
                 >
 
                 <div class="logo">
-                    <img src="image/logo.png" />
+                    <img src="{% static 'img/logo.png' %}" />
                 </div>
             </div>
         </div>

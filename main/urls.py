@@ -8,6 +8,6 @@ urlpatterns = [
     path('form/', views.form, name ="form"),
     path('result/', views.result, name ="result"),
     path('loading/', views.loading),
-    path('result1/', views.result1),
+
     
 ]
