@@ -7,75 +7,120 @@
 </head>
 
 <style>
- 
     .question_box {
-        width: 390px;
-        height: 844px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .question_form {
-        width : 100%;
-        height : 100%;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 30%;
     }
 
     .question_title {
-        color : #67917D;
+        color: #67917D;
         width: 100%;
+        font-size: 100px;
+        margin: 0 0 0 30px;
     }
 
     .question {
-        width : 274px;
-        height: 106px;
-        color : #67917D;
-        border : 3px solid #000000;
+
+        height: 300px;
+        color: #67917D;
+        margin: 0 0 30px 30px;
         background-color: #EDEDDD;
         border-radius: 30px;
+        font-size: 50px;
+        font-family: Gmarket Sans TTF;
+        font-style: normal;
     }
 
-    .next_question {
-        bottom : 50px;
+    .submit_button {
+        width: 80%;
+        height: auto;
+        bottom: 5%;
         background-color: #EDEDDD;
-        border : 0;
+        border: 0;
         border-radius: 10%;
-        
+
+
     }
 
     .question_number {
-        color : #67917D;
+        color: #67917D;
         text-align: center;
-        font-size : 25px;
+        font-size: 80px;
+        margin: 100px 0 0 0;
+        font-family: Gmarket Sans TTF;
+        font-style: normal;
         
 
+
     }
+
+    .contents {
+        width: 99%;
+        height: 100%;
+        
+        
+    }
+
+    .question:hover{
+     background-color:rgb(34, 175, 128);
+     color:#000000;
+    }
+
+    .question:checked{
+        background-color:rgb(34, 175, 128);
+        color : #000000;
+    }
+    
     
 </style>
 
 <body>
     <div class="question_box">
-     
 
-        <form action="/result/" method='post' class = "question_form">
-            {% csrf_token %}
-            {% for question in questions %}
+        
+            <form action="/result/" method='post' class="question_form">
+                {% csrf_token %}
 
-            <p class = "question_number">{{question.number}}번 </p>
+                {% for question in questions %}
+                <div class='contents'>
+               
+                <p class="question_number"> <span style ="font-weight: 700;">Q. </span>{{question.number}}번 </p>
 
-            <h3 class = "question_title"> {{question.content}}</h3>
+                <h3 class="question_title"> {{question.content}}</h3>
 
-            {% for choice in question.choice_set.all %}
+                {% for choice in question.choice_set.all %}
 
-            <div class = "question">
-                <input type="radio" name="question-{{ question.pk }}" id="choice-{{ choice.pk }}"
-                    value="{{ choice.embti.pk }}">
-                <label for="choice-{{ choice.pk }}">{{choice.content}}</label>
+                <div class="question" onclick = "scrollDown()" name="question-{{ question.pk }}" id="choice-{{ choice.pk }}">
+                    
+                        {{choice.embti.pk}}
+                    
+                    <p> {{choice.content}}</p>
+                </div>
+                
+                {% endfor %}
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                {% endfor %}
             </div>
-            {% endfor %}
-          
-            {% endfor %}
-            <input type="submit" value="다음 질문" class ="next_question">
-        </form>
-   
+                <input type="submit" value="제출하기" class="submit_button">
+            </form>
+       
     </div>
 </body>
 
+<script>
+    function scrollDown() {
+        window.scrollBy(0,1200);
+       
+        
+    }
+</script>
 </html>
